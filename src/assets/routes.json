@@ -1,0 +1,3 @@
+{
+    "/tasks/:itemId/taskItems/:itemId" : "/taskItems"
+}

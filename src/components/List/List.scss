@@ -1,0 +1,35 @@
+.todo__list {
+    align-items: center;
+
+    &-item-delete {
+        margin-left: auto;
+        display: flex;
+        width: 10px;
+        height: 10px;
+        transition: opacity .3s ease;
+        opacity: 0;
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &-item {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        i {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        &:hover, &.active {
+            .todo__list-item-delete {
+                opacity: 1;
+            }
+        }
+    }
+}

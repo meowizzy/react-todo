@@ -1,0 +1,72 @@
+{
+  "items": [
+    {
+      "title": "Покупки",
+      "color": "#9094fe",
+      "taskItems": [],
+      "id": 1
+    },
+    {
+      "title": "Книги",
+      "color": "#ffd294",
+      "taskItems": [],
+      "id": 2
+    },
+    {
+      "title": "Продукты",
+      "color": "#7affba",
+      "taskItems": [],
+      "id": 3
+    },
+    {
+      "title": "Frontend",
+      "color": "#fee258",
+      "taskItems": [],
+      "id": 4
+    },
+    {
+      "title": "Work",
+      "color": "#e6e6e6",
+      "taskItems": [],
+      "id": 5
+    }
+  ],
+  "taskItems": [
+    {
+      "itemId": 1,
+      "title": "Купить макароны",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "itemId": 1,
+      "title": "Купить картошку",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "itemId": 1,
+      "title": "Купить хлеб",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "itemId": 2,
+      "title": "Прочитать книгу \"Нравственные письма Луцилию\"",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "itemId": 2,
+      "title": "Прочитать книгу \"Думай медленно, решай быстро\"",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "itemId": 1,
+      "title": "12313131",
+      "completed": false,
+      "id": 6
+    }
+  ]
+}
