@@ -24,7 +24,7 @@ To get all task list categories use get request `http://localhost:3001/items`.
 
 
 ### Get all tasks
-To get all tasks use get request `http://localhost:3001/tasks`.
+To get all tasks use get request `http://localhost:3001/taskItems`.
 
 
 
