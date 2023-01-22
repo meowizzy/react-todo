@@ -37,7 +37,6 @@ function App() {
   const onAddTaskItem = (listId, taskObj) => {
     const newItems = listItems.map(item => {
       if (item.id === listId) {
-        console.log(item);
         item.taskItems = [...item.taskItems, taskObj];
       }
 
@@ -47,15 +46,59 @@ function App() {
     setListItems(newItems);
   };
 
-  const onChangeFolderTitle = (id) => {
+  const onRemoveTaskItem = (listId, taskObj) => {
     const newItems = listItems.map(item => {
-      if (item.id === id) {
-        item.title = toolTipValue;
+      if (item.id === listId) {
+        item.taskItems = item.taskItems.filter(task => task.id !== taskObj.id);
+      }
+      return item;
+    });
+    setListItems(newItems);
+  };
+
+  const onCompleteTaskItem = (listId, taskObj, isCompleted) => {
+    const newItems = listItems.map(item => {
+      if (item.id === listId) {
+        item.taskItems.map(taskItem => {
+          if (taskItem.id === taskObj.id) {
+            taskItem.completed = isCompleted;
+          }
+          return taskItem;
+        });
+      }
+
+      return item;
+    });
+
+    axios.patch(`http://localhost:3001/taskItems/${taskObj.id}`, {
+      completed: isCompleted
+    }).catch(e => {
+      console.log(e)
+    }).then(() => {
+      setListItems(newItems);
+    })
+  };
+
+  const onChangeFolderTitle = (obj) => {
+    const newItems = listItems.map(item => {
+      if (item.id === (obj.itemId ? obj.itemId : obj.id)) {
+        if (toolTipPos.isTask) {
+          item.taskItems.map(taskItem => {
+            if (taskItem.id === obj.id) {
+              taskItem.title = toolTipValue;
+            }
+            return taskItem;
+          });
+        } else {
+          item.title = toolTipValue;
+        }
       }
       return item;
     });
 
-    axios.patch(`http://localhost:3001/items/${id}`, {
+    const api = toolTipPos.isTask ? `http://localhost:3001/taskItems/${obj.id}` : `http://localhost:3001/items/${obj.id}`;
+
+    axios.patch(api, {
         title: toolTipValue
     }).catch(e => {
         console.log(e);
@@ -63,7 +106,6 @@ function App() {
       setListItems(newItems);
       closeToolTip();
     });
-
   };
 
   const closeToolTip = () => {
@@ -76,7 +118,7 @@ function App() {
     const parts = locationPathName.split('lists/');
 
     setActiveListItem(listItems && listItems.find(item => item.id === +parts[1]));
-  }, [locationPathName])
+  }, [listItems, locationPathName]);
 
   
 
@@ -86,8 +128,8 @@ function App() {
         <div className="todo__sidebar">
           
           <div className="todo__sticky-wrap">
-            <Link exact to="/" className='todo__header-link'>
-              <AllListBtn title={"Все задачи"}/>
+            <Link exact="true" to="/" className='todo__header-link'>
+              <AllListBtn title={"Все задачи"} />
             </Link>
 
             {
@@ -101,22 +143,28 @@ function App() {
         
           <div className="todo__tasks">
             <Routes>
-              <Route exact path="/" element={
+              <Route exact="true" path="/" element={
                 listItems && listItems.map(item => (
                   <Tasks list={item} 
+                          pos={toolTipPos}
                           setPos={setToolTipPos} 
                           toolTipTitle={toolTipValue} 
                           setToolTipTitle={setToolTipValue}
                           onAddTaskItem={onAddTaskItem}
+                          onRemoveTaskItem={onRemoveTaskItem}
+                          onComplete={onCompleteTaskItem}
                           key={item.id}/>
                 ))
               }/>
               <Route path="/lists/:id" element={
-                activeListItem && <Tasks list={activeListItem} 
+                activeListItem && <Tasks list={activeListItem}
+                                              pos={toolTipPos}
                                               setPos={setToolTipPos} 
                                               toolTipTitle={toolTipValue} 
                                               setToolTipTitle={setToolTipValue}
-                                              onAddTaskItem={onAddTaskItem}/>
+                                              onAddTaskItem={onAddTaskItem}
+                                              onComplete={onCompleteTaskItem}
+                                              onRemoveTaskItem={onRemoveTaskItem}/>
               }/>
             </Routes>
           </div>
@@ -125,7 +173,7 @@ function App() {
 
       {
         toolTipPos && 
-          <div className="tooltip" style={{top: toolTipPos.y, left: toolTipPos.x}}>
+          <div className="tooltip" key={toolTipPos.id} style={{top: toolTipPos.y, left: toolTipPos.x}}>
             <span className="tooltip__close" onClick={closeToolTip}>
                 <i>
                   <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -134,7 +182,7 @@ function App() {
                 </i>
             </span>
             <input type="text" value={toolTipValue} onChange={(e) => setToolTipValue(e.target.value)}/>
-            <button onClick={() => onChangeFolderTitle(toolTipPos.id)}>
+            <button onClick={() => onChangeFolderTitle(toolTipPos.item)}>
               <i>
                 <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.29999 1.20001L3.79999 6.70001L1.29999 4.20001" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

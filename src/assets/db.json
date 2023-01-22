@@ -13,60 +13,132 @@
       "id": 2
     },
     {
-      "title": "Продукты",
-      "color": "#7affba",
+      "title": "Фильмы",
+      "color": "#75f6ff",
       "taskItems": [],
       "id": 3
     },
     {
-      "title": "Frontend",
-      "color": "#fee258",
+      "title": "Сериалы",
+      "color": "#7cfe96",
       "taskItems": [],
       "id": 4
     },
     {
-      "title": "Work",
-      "color": "#e6e6e6",
+      "title": "Тренировки",
+      "color": "#ff6666",
       "taskItems": [],
       "id": 5
+    },
+    {
+      "title": "Frontend",
+      "color": "#c7c7c7",
+      "taskItems": [],
+      "id": 6
+    },
+    {
+      "title": "Работа",
+      "color": "#000000",
+      "taskItems": [],
+      "id": 7
+    },
+    {
+      "title": "Семья",
+      "color": "#04ff00",
+      "taskItems": [],
+      "id": 8
     }
   ],
   "taskItems": [
     {
       "itemId": 1,
-      "title": "Купить макароны",
+      "title": "Купить картошку",
       "completed": false,
       "id": 1
     },
     {
       "itemId": 1,
-      "title": "Купить картошку",
+      "title": "Купить помидоры",
       "completed": false,
       "id": 2
     },
     {
       "itemId": 1,
-      "title": "Купить хлеб",
+      "title": "Купить сахар",
       "completed": false,
       "id": 3
     },
     {
       "itemId": 2,
-      "title": "Прочитать книгу \"Нравственные письма Луцилию\"",
+      "title": "Прочесть Войну и мир",
       "completed": false,
       "id": 4
     },
     {
       "itemId": 2,
-      "title": "Прочитать книгу \"Думай медленно, решай быстро\"",
+      "title": "Купить книгу 1984",
       "completed": false,
       "id": 5
     },
     {
-      "itemId": 1,
-      "title": "12313131",
+      "itemId": 3,
+      "title": "Посмотреть фильм \"Опенгеймер\"",
       "completed": false,
       "id": 6
+    },
+    {
+      "itemId": 3,
+      "title": "Мстители. Война бесконечности",
+      "completed": false,
+      "id": 7
+    },
+    {
+      "itemId": 4,
+      "title": "Посмотреть Уэнсдей",
+      "completed": false,
+      "id": 8
+    },
+    {
+      "itemId": 5,
+      "title": "Отжимания 50 раз 3 подхода",
+      "completed": false,
+      "id": 9
+    },
+    {
+      "itemId": 6,
+      "title": "Изучить React хуки",
+      "completed": false,
+      "id": 10
+    },
+    {
+      "itemId": 6,
+      "title": "Изучить Redux",
+      "completed": false,
+      "id": 11
+    },
+    {
+      "itemId": 7,
+      "title": "Закрыть все задачи на сегодня",
+      "completed": false,
+      "id": 13
+    },
+    {
+      "itemId": 8,
+      "title": "Купить племяннице подарок на др",
+      "completed": false,
+      "id": 14
+    },
+    {
+      "itemId": 5,
+      "title": "Пресс 40 раз 3 подхода",
+      "completed": false,
+      "id": 15
+    },
+    {
+      "itemId": 7,
+      "title": "Набрать 1500 баллов за январь",
+      "completed": false,
+      "id": 16
     }
   ]
 }
