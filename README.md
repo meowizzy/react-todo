@@ -16,15 +16,15 @@ You may also see any lint errors in the console.
 
 ### `npm run fake-json`
 
-Runs the json-server.\
-Open [http://localhost:3001](http://localhost:3001) to view it in your browser.\
+Runs the json-server.
+Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
 
 ### Get all task list categories.
-To get all task list categories use get request `http://localhost:3001/items`.\
+To get all task list categories use get request `http://localhost:3001/items`.
 
 
 ### Get all tasks
-To get all tasks use get request `http://localhost:3001/tasks`.\
+To get all tasks use get request `http://localhost:3001/tasks`.
 
 
 
