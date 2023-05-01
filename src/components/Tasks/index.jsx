@@ -21,7 +21,7 @@ function Tasks({pos, list, setPos, toolTipTitle, setToolTipTitle, onAddTaskItem,
     };
 
     const onRemove = (obj) => {
-        axios.delete(`http://localhost:3001/taskItems/${obj.id}`).then(() => {
+        axios.delete(`https://my-json-server.typicode.com/meowizzy/react-todo/taskItems/${obj.id}`).then(() => {
             onRemoveTaskItem(list.id, obj);
         });
     }
