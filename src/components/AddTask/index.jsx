@@ -18,7 +18,7 @@ export default function AddTask({ list, onAddTaskItem }) {
         }
 
         if (inputValue.trim() !== '') {
-            axios.post(`http://localhost:3001/taskItems`, obj).then(({ data }) => {
+            axios.post(`https://my-json-server.typicode.com/meowizzy/react-todo/taskItems`, obj).then(({ data }) => {
                 onAddTaskItem(list.id, data);
                 toggleFormVisible();
             });
