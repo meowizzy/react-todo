@@ -15,7 +15,7 @@ function App() {
 
 
   useEffect(() => {
-    axios.get('http://localhost:3001/items?_embed=taskItems').then(({ data }) => {
+    axios.get('https://my-json-server.typicode.com/meowizzy/react-todo/items?_embed=taskItems').then(({ data }) => {
       setListItems(data);
     });
   }, []);
@@ -28,7 +28,7 @@ function App() {
 
 
   const onRemoveItem = id => {
-    axios.delete(`http://localhost:3001/items/${id}`).then(() => {
+    axios.delete(`https://my-json-server.typicode.com/meowizzy/react-todo/items/${id}`).then(() => {
       setListItems(listItems.filter(item => item.id !== id));
     });
     setActiveListItem(null);
@@ -70,7 +70,7 @@ function App() {
       return item;
     });
 
-    axios.patch(`http://localhost:3001/taskItems/${taskObj.id}`, {
+    axios.patch(`https://my-json-server.typicode.com/meowizzy/react-todo/taskItems/${taskObj.id}`, {
       completed: isCompleted
     }).catch(e => {
       console.log(e)
@@ -96,7 +96,7 @@ function App() {
       return item;
     });
 
-    const api = toolTipPos.isTask ? `http://localhost:3001/taskItems/${obj.id}` : `http://localhost:3001/items/${obj.id}`;
+    const api = toolTipPos.isTask ? `https://my-json-server.typicode.com/meowizzy/react-todo/taskItems/${obj.id}` : `https://my-json-server.typicode.com/meowizzy/react-todo/items/${obj.id}`;
 
     axios.patch(api, {
         title: toolTipValue
