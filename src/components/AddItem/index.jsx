@@ -25,7 +25,7 @@ function AddItem({onAdd}) {
             taskItems: []
         };
 
-        axios.post('http://localhost:3001/items', newItem).then(({ data }) => {
+        axios.post('https://my-json-server.typicode.com/meowizzy/react-todo/items', newItem).then(({ data }) => {
             onAdd(data);
             closePopup();
         });
