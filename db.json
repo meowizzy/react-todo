@@ -1,0 +1,90 @@
+{
+  "items": [
+    {
+      "title": "Спорт",
+      "color": "#a8ffba",
+      "taskItems": [],
+      "id": 1
+    },
+    {
+      "title": "Работа",
+      "color": "#ff6b6b",
+      "taskItems": [],
+      "id": 3
+    },
+    {
+      "title": "Развлечения",
+      "color": "#7d7d7d",
+      "taskItems": [],
+      "id": 4
+    },
+    {
+      "title": "Frontend",
+      "color": "#7ae9ff",
+      "taskItems": [],
+      "id": 5
+    }
+  ],
+  "taskItems": [
+    {
+      "itemId": 5,
+      "title": "react",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "itemId": 5,
+      "title": "redux",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "itemId": 5,
+      "title": "redux-toolkit",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "itemId": 5,
+      "title": "typescript",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "itemId": 5,
+      "title": "react-hooks",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "itemId": 1,
+      "title": "Отжимания",
+      "completed": false,
+      "id": 6
+    },
+    {
+      "itemId": 1,
+      "title": "Приседания",
+      "completed": false,
+      "id": 7
+    },
+    {
+      "itemId": 1,
+      "title": "Бег",
+      "completed": false,
+      "id": 8
+    },
+    {
+      "itemId": 1,
+      "title": "Прыжки со скакалкой ",
+      "completed": false,
+      "id": 9
+    },
+    {
+      "itemId": 1,
+      "title": "Подтягивания",
+      "completed": false,
+      "id": 10
+    }
+  ]
+}
