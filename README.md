@@ -1,3 +1,10 @@
+## Technologies:
+✔️ react  
+✔️ react-router, react-router-dom  
+✔️ scss  
+✔️ react-classnames  
+✔️ axios  
+
 ## Available Scripts
 
 In the project directory, you can run:
